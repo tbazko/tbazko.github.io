@@ -1,0 +1,51 @@
+header {
+  img {
+    margin: 0 0 20px;
+  }
+}
+
+.about {
+  height: 600px;
+  background: url('../img/about-bg.png') no-repeat center;
+  background-size: cover;
+  position: relative;
+  line-height: 600px;
+  background-attachment: fixed;
+  @include breakpoint(medium) {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+  h2 {
+    line-height: 48px;
+  }
+  @include retina() {
+    background: url('../img/about-bg@2.png') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    @include breakpoint(medium) {
+      background-attachment: scroll;
+      background-size: cover;
+    }
+  }
+}
+
+.experience {
+  padding: 70px 0 90px;
+}
+
+.presentation {
+  padding: 70px 0;
+  background: #ecf0f1;
+}
+
+footer {
+  background: #000;
+  position: relative;
+  h2 {
+    padding: 80px 0 0 0;
+  }
+  p {
+    padding: 110px 0 40px;
+    color: #fff;
+  }
+}

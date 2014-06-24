@@ -1,0 +1,141 @@
+.portfolio {
+  padding: 0 0 90px 0;
+  h2 {
+    padding: 90px 0;
+    @include breakpoint(medium) {
+      padding: 90px 0 60px;
+    }
+  }
+}
+
+.portfolio-blocks {
+  text-align: center;
+  div {
+    position: relative;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  a {
+    @extend %inline-block;
+    border-bottom: none;
+    position: relative;
+    margin-bottom: -3px;
+    text-decoration: none;
+    &:after {
+      content: "";
+      height: 100%;
+      width: 0%;
+      background: none;
+      @include transitions();
+      @include breakpoint(medium) {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(#fafafa, 0.85);
+        @include transitions();
+      }
+    }
+    &:hover {
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(#fafafa, 0.95);
+        @include transitions();    
+      }
+      .info {
+        display: block;
+      }
+    }
+    .info {
+      display: none;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      z-index: 2;
+      * {
+        text-align: left;
+      }
+      p {
+        font-size: 18px;
+        color: #333;
+      }
+      h3 + p {
+        margin-top: 0px;
+      }
+      @include breakpoint(medium) {
+        display: block;
+      }
+      @include breakpoint(small) {
+        p {
+          font-size: 14px;
+          line-height: 21px;
+        }
+      }
+    }
+  }
+  @include breakpoint(medium) {
+    a {
+      margin-top: 20px;
+    }
+    .portfolio-image a {
+      margin-top: 0;
+    }
+  }
+  @include breakpoint(small) {
+    .md-1-2 {
+      float: none;
+      width: 100%;
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+}
+
+.portfolio-blocks.with-padding > div {
+  padding: 20px 0;
+}
+
+.portfolio-info {
+  padding-left: 20px;
+  text-align: left;
+  @include breakpoint(small) {
+    margin-top: 20px;
+  }
+}
+
+.portfolio-image {
+  padding-right: 20px;
+  border-right: 1px solid #27ae60;
+  text-align: right;
+}
+
+.portfolio-blocks .portfolio-image {
+  .info {
+    top: 0;
+    left: 0;
+    right: 0;
+    line-height: 288px;
+    @include breakpoint(medium) {
+      line-height: normal;
+      top: 30px;
+    }
+  }
+  h3 {
+    text-align: center;
+  }
+}

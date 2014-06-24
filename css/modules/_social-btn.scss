@@ -1,0 +1,73 @@
+.social-btn {
+  padding: 70px 0 90px;
+  li {
+    position: relative;
+  }
+  a {
+    @extend %inline-block;
+    color: #fff;
+    text-align: center;
+    margin: 0 0 0 35px;
+    font-size: 30px;
+    line-height: 48px;
+    height: 46px;
+    width: 46px;
+    background: #000;
+    text-decoration: none;
+    @include border-radius(4px);
+    @include transitions();
+    &:hover {
+      background: #27ae60;
+      @include transitions();
+    }
+    @include breakpoint(medium) {
+      margin-left: 15px;
+      margin-bottom: 15px;
+    }
+  }
+  a.cv-pdf {
+    width: auto;
+    padding: 0 10px;
+    text-decoration: none;
+    background: #27ae60;
+    @include breakpoint(small) {
+      margin-left: 0;
+      margin-top: 35px;
+      padding: 0 5px;
+    }
+    &:hover {
+      color: #fff;
+      background: #000;
+    }
+  }
+  li:first-child a {
+    margin-left: 0;
+  }
+  &.light {
+    a {
+      color: #000;
+      background: #fff;
+      &:hover {
+        background: #27ae60;
+        @include transitions();
+      }
+    }
+  }
+  .skype-name {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    width: 155px;
+    margin: 15px 0 0;
+    padding: 20px 10px;
+    text-align: center;
+    border: 1px solid #f3f4f5;
+    z-index: 3;
+    @include border-radius(4px);
+    @include box-shadow(0px 3px 0px #bdc3c7);
+    @include breakpoint(medium) {
+      left: -40px;
+    }
+  }
+}

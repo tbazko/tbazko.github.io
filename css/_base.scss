@@ -1,0 +1,91 @@
+html, body {
+  font-family: 'Jura', 'Arial', 'Helvetica Neue', sans-serif;
+}
+
+h2 {
+  font-family: 'Jura', 'Arial', 'Helvetica Neue', sans-serif;
+  color: #000;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 48px;
+  margin: 0;
+  &.light {
+    color: #fff;
+  }
+  @include breakpoint(small) {
+    font-size: 30px;
+    line-height: 42px;
+  }
+}
+
+h3, h4 {
+  font-family: 'Jura', 'Arial', 'Helvetica Neue', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+  @include breakpoint(small) {
+    font-size: 18px;
+  }
+}
+
+h4 {
+  font-size: 26px;
+  @include breakpoint(small) {
+    font-size: 22px;
+  }
+}
+
+h2 a, p a, h3 a {
+  color: #5eade2;
+  border-bottom: 1px solid #5eade2;
+  text-decoration: none;
+  &:hover {
+    border-bottom: none;
+  }
+}
+
+span {
+  color: #27ae60;
+}
+
+p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+video {
+  margin-top: 30px;
+  @include breakpoint(small) {
+    width: 280px;
+    object {
+      width: 280px;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.middle {
+  @extend %inline-block;
+  vertical-align: middle;
+}
+
+.clear {
+  clear: both;
+}
+
+.border-left {
+  border-left: 1px solid #27ae60;
+}

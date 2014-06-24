@@ -1,0 +1,102 @@
+/*
+  Simple Grid
+  Learn More - http://dallasbass.com/simple-grid-a-lightweight-responsive-css-grid/
+  Project Page - http://thisisdallas.github.com/Simple-Grid/
+  Author - Dallas Bass
+  Site - dallasbass.com
+*/
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+}
+
+[class*='col-'] {
+  float: left;
+}
+
+.grid {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  .centered {
+    float: none;
+    margin: 0 auto;
+  }
+  .grid {
+    min-width: 0;
+  }
+}
+
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content Columns */
+$columns: 12;
+
+@mixin createFractionColumns ($prefix, $columns) { // Mixin for creating grid columns.
+                                                   // Add name of prefix + selector type '.', '&.' etc. (in brackets!)
+  @for $numerator from 1 through $columns {        // And number of columns to make it work
+
+    @for $denominator from 1 through $columns {
+      @if $numerator < $denominator {
+        #{$prefix}-#{$numerator}-#{$denominator} {
+          width: $numerator / $denominator * 100%;
+        }
+
+      }
+      @else if $numerator == 1 and $denominator == 1 {
+        #{$prefix}-1-1 {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include createFractionColumns ('.col', $columns);
+
+@media handheld, only screen and (max-width: 799px) {
+
+  .grid {
+    width: 100%;
+    min-width: 320px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    &.collapse, .grid {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  [class*='col-'] {
+    width: auto;
+    float: none;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  [class*='md-'] {
+    float: left;
+  }
+
+  .grid:before {
+    content: "";
+    display: table;
+    clear: both !important;
+  }
+
+  @include createFractionColumns ('.md', 6);
+}

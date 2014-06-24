@@ -1,0 +1,27 @@
+.main-menu {
+  padding: 40px 0 40px;
+  a {
+    font-size: 22px;
+    line-height: 22px;
+    color: #000;
+    text-decoration: none;
+    padding: 0 20px;
+    border-bottom: none;
+    border-left: 1px solid #27ae60;
+    @include transitions();
+    &:hover, &.active {
+      color: #27ae60;
+      @include transitions();
+    }
+    @include breakpoint(small) {
+      padding: 0 14px;
+    }
+  }
+  li:first-child a {
+    border-left: none;
+    padding-left: 0;
+  }
+  li:last-child a {
+    padding-right: 0;
+  }
+}
