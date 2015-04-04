@@ -1,0 +1,39 @@
+.skills {
+  background: #27ae60;
+  padding: 0 0 80px 0;
+  h2 {
+    padding: 90px 0;
+    font-weight: 600;
+  }
+  @include breakpoint(small) {
+    .md-1-2 {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+.skill-block {
+  background: #fff;
+  padding: 20px;
+  @include border-radius(4px);
+  @include box-shadow(0px 3px 0px #bdc3c7);
+  .img-container {
+    @extend %inline-block;
+    height: 100px;
+    line-height: 100px;
+    margin-bottom: 10px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+  p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  @include breakpoint(medium) {
+    margin-top: 20px;
+  }
+}

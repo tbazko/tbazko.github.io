@@ -1,0 +1,51 @@
+@mixin breakpoint($point) {
+  @if $point == big {
+    @media (min-width: 800px) { @content; }
+  }
+  @else if $point == medium {
+    @media (max-width: 799px) { @content; }
+  }
+  @else if $point == small {
+    @media (max-width: 480px)  { @content; }
+  }
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -khtml-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transitions ($transitions: all .2s ease) {
+  -webkit-transition: $transitions;
+  -moz-transition: $transitions;
+  -o-transition: $transitions;
+  transition: $transitions;
+}
+
+@mixin box-shadow($box-shadow...) {
+  -moz-box-shadow: $box-shadow;
+  -webkit-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
+}
+
+@mixin retina() {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and ( min--moz-device-pixel-ratio: 2),
+  only screen and ( -o-min-device-pixel-ratio: 2/1),
+  only screen and ( min-device-pixel-ratio: 2),
+  only screen and ( min-resolution: 192dpi),
+  only screen and ( min-resolution: 2dppx)
+  {
+    @content;
+  }
+}
+
+/* ================= Placeholders ====================== */
+
+%inline-block { // Hack for good render in old IE
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
